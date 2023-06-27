@@ -1,0 +1,129 @@
+<%- include('../../fragments/header.ejs') %>
+    
+   <main>
+        <script type="application/javascript" src="/js/validationRentForm.js"></script>
+        <h2><%= pageTitle%></h2>
+        
+        <form class="form" method="post" action="<%=formAction%>"  novalidate > <!--onsubmit="return validateForm();"-->
+            <input type="hidden" name="_id" value="<%= rent._id %>">
+
+
+            <div style="display: none">
+                <span id="errorMessage-required"><%= __('auth.fieldRequired') %></span>
+            </div>
+            <div style="display: none">
+                <span id="errorMessage-dateFutureError"><%= __('auth.dateFutureError') %></span>
+            </div>
+            <div style="display: none">
+                <span id="errorMessage-CompareDate"><%= __('auth.CompareDate') %></span>
+            </div>
+
+            <div style="display: none">
+                <span id="errorMessage-dateError"><%= __('auth.dateError') %></span>
+            </div>
+            <div style="display: none">
+                <span id="errorMessage-formError"><%= __('auth.formError') %></span>
+            </div>
+
+            <!-- customer dropdown field -->
+            <label for="customerData"><%=__('rent.fields.customer_id')%>:<abbr title="required" aria-label="required">*</abbr></label>
+            <select id="customer_id" name="customer_id" <%= (formMode == 'showDetails') ? 'disabled' : ''%>
+                    class="<%= validationErrors.find(e => e.path.includes('customer_id')) ? 'error-input' : ''%>">
+                <% if (formMode !='edit' ){ %>
+                    <option value="" selected="selected"><%= __('rent.fields.chooseCustomer') %></option>
+                <% } %>
+
+                <%for (let i=0; i<allCustomers.length; i++) { let customer=allCustomers[i];%>
+                    <option value="<%=customer._id %>" label=" <%= customer.name + '' + customer.surname%>"
+                            <%=(rent.customer_id && customer._id.toString()== rent.customer_id.toString()) ? 'selected': ''%>
+                        ></option>
+
+                <% } %>
+            </select>
+
+            <span id="errorCustomer_id" class="errors-text">
+                <% if (validationErrors.find(e=> e.path.includes('customer_id'))) { %>
+                    <% if(validationErrors.find(e => e.path.includes('customer_id')).message.toString() === "The field is required") { %>
+                        <%= __('auth.fieldRequired')%>
+                    <%}else{%>
+                        <%= __('auth.lengthError')%>
+                    <%}%>
+                <% } %>
+            </span>
+
+            <!-- car dropdown field -->
+            <label for="carData"><%=__('rent.fields.car_id')%>:<abbr title="required" aria-label="required">*</abbr></label>
+            <select id="car_id" name="car_id" required class="<%=validationErrors.find(e=>e.path.includes('car_id')) ? 'error-input' : '' %>" <%=(formMode=='showDetails' ) ? 'disabled': '' %> >
+                <% if (formMode !='edit' ){ %>
+                    <option value="" selected="selected"><%= __('rent.fields.chooseCar') %></option>
+                <% } %>
+
+                <%for (let i=0; i<allCars.length; i++) {let car=allCars[i]; %>
+                    <option value="<%= car._id %>" label="<%= car.make%>"
+                        <%=(rent.car_id && car._id.toString()==rent.car_id.toString()) ? 'selected' : '' %>></option>
+                <% } %>
+                
+            </select>
+            <span id="errorCar_id" class="errors-text">
+                <% if (validationErrors.find(e=> e.path.includes('car_id'))) { %>
+                    <% if(validationErrors.find(e => e.path.includes('car_id')).message.toString() === "The field is required") { %>
+                        <%= __('auth.fieldRequired')%>
+                    <%}else{%>
+                        <%= __('auth.lengthError')%>
+                    <%}%>
+                <% } %>
+            </span>
+
+
+            <label for="rent_date"><%=__('rent.fields.rent_date')%>:<abbr title="required" aria-label="required">*</abbr></label>
+            <input type="date" name="rent_date" id="rent_date" value="<%= fmt.formatDate(rent.rent_date)%>"
+                   class="<%= validationErrors.find(e=>e.path.includes('rent_date')) ? 'error-input' : '' %>"
+                <%=(formMode=='showDetails' ) ? 'disabled' : '' %> />
+            <span id="errorRentDate" class="errors-text">
+                <% if (validationErrors.find(e=> e.path.includes('rent_date'))) { %>
+                    <% if(validationErrors.find(e => e.path.includes('rent_date')).message.toString() === "date is required.") { %>
+                        <%= __('auth.fieldRequired')%>
+                    <%}else{%>
+                        <%= __('auth.dateFutureError')%>
+                    <%}%>
+                <% } %>
+            </span>
+
+             <label for="return_date"><%=__('rent.fields.return_date')%>:</label>
+            <input type="date" name="return_date" id="return_date" value="<%= fmt.formatDate(rent.return_date)%>"
+                   class="<%= validationErrors.find(e=>e.path.includes('return_date')) ? 'error-input' : '' %>"
+                    <%=(formMode=='showDetails' ) ? 'disabled' : '' %> />
+            <span id="errorReturnDate" class="errors-text">
+                <% if (validationErrors.find(e=> e.path.includes('return_date'))) { %>
+                    <% if(validationErrors.find(e=> e.path.includes('return_date')).message.toString()==="Return date must be after rent date") {%>
+                <%=__('auth.CompareDate')%>
+                    <%}%>
+                <% } %>
+            </span>
+
+
+
+
+            
+            <!-- BUTTONS -->
+            <% if (formMode == 'showDetails') { %>
+                <div>
+                    <a class="list-actions-button-edit" href="/rent/edit/<%= rentBefore._id %>"><%= __('form.actions.edit') %></a>
+                </div>
+            <% } %>
+            
+            <div>
+                <p id="errorsSummary" class="errors-text"></p>
+
+                <% if (formMode != 'showDetails') { %>
+                    <input class="form-button-submit" type="submit" value="<%= __('rent.form.edit.btnLabel')%>" />
+                    <a class="form-button-cancel" href="/rent"><%= __('form.actions.cancel') %></a>
+                <% } else { %>
+                    <a class="form-button-cancel" href="/rent"><%= __('form.actions.return') %></a>
+                <% } %>
+            </div>
+            
+        </form>
+    </main>
+    
+<%- include('../../fragments/footer.ejs') %>

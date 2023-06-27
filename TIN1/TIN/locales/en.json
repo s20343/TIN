@@ -1,0 +1,153 @@
+{
+	"main-page": {
+		"content": "Main page",
+		"loginh5": "Login",
+		"password": "Password:",
+		"loginBtn": "Log in",
+		"loginInfo": "You are logged in as:",
+		"logoutBtn": "Log out",
+		"phone_number": "Phone Number"
+	},
+	"nav": {
+		"main-page": "Main page",
+		"customers": "Customers",
+		"cars": "Cars",
+		"rent": "rent"
+	},
+	"list": {
+		"actions": {
+			"title": "Actions",
+			"details": "Details",
+			"edit": "Edit",
+			"delete": "Delete"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Return",
+			"edit": "Edit",
+			"cancel": "Cancel",
+			"details": "Details",
+			"delete": "Delete"
+		}
+	},
+	"customers": {
+		"fields": {
+			"name": "First name",
+			"surname": "Last name",
+			"address": "Address",
+			"phone_number": "Phone number",
+			"email": "Email",
+			"password": "Password"
+		},
+		"list": {
+			"title": "Customers",
+			"addNew": "Add new customer",
+			"noData": "No customers in database",
+			"pageTitle": "Customers list"
+		},
+		"form": {
+			"rent": "Rents history",
+			"add": {
+				"pageTitle": "Adding customers",
+				"btnLabel": "Add customer",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "Customer added successfully"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edit customer",
+				"btnLabel": "Save changes",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "Customer updated successfully"
+				}
+			}
+		}
+	},
+	"cars": {
+		"fields": {
+			"make": "Make",
+			"model": "Model",
+			"year": "Year",
+			"color": "color"
+		},
+		"list": {
+			"title": "Cars",
+			"addNew": "Add new cars",
+			"noData": "No cars in database",
+			"pageTitle": "Cars list"
+		},
+		"form": {
+			"rent": "Rents history",
+			"add": {
+				"pageTitle": "Adding cars",
+				"btnLabel": "Add car",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "Cars added successfully"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edit car",
+				"btnLabel": "Save changes",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "Car updated successfully"
+				}
+			}
+		}
+	},
+	"rent": {
+		"fields": {
+			"customer_id": "Customer",
+			"car_id": "Car",
+			"rent_date": "Rent date",
+			"return_date": "Return date",
+			"chooseCustomer": "---Choose customer---",
+			"chooseCar": "---Choose car---"
+		},
+		"list": {
+			"title": "Rents",
+			"addNew": "Add new rent",
+			"noData": "No rents in database",
+			"pageTitle": "Rents list"
+		},
+		"form": {
+			"add": {
+				"pageTitle": "Adding rents",
+				"btnLabel": "Add rent",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "Rent added successfully"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edit rent",
+				"btnLabel": "Save changes",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "Rent updated successfully"
+				}
+			}
+		}
+	},
+	"auth": {
+		"loginError": "Wrong phone number or password",
+		"fieldRequired": "This field is required",
+		"dateError": "Field should contain date in YYYY-MM-DD format",
+		"dateFutureError": "Date can't be from the future",
+		"formError": "Form contains errors",
+		"lengthError": "Field should contain 3 to 60 chars",
+		"length2Error": "Field should contain 2 to 120 chars",
+		"yearError": "The number should be between 2000 and 2022",
+		"PhonePatternError": "The field should contain a valid telephone number in accordance with the pattern",
+		"CompareDate": "The return date should be later than the rental date"
+	},
+	"customer": {
+		"list": {
+			"addNew": "customer.list.addNew"
+		}
+	}
+}

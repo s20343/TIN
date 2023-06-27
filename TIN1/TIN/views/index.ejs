@@ -1,0 +1,25 @@
+<%- include('./fragments/header.ejs') %>
+
+    <main>
+        <h2><%= __('main-page.content') %></h2>
+        <% if(!loggedUser) { %>
+            <div id="login">
+                <h5><%= __('main-page.loginh5') %></h5>
+                <form method="post" action="/login" novalidate>
+                    <label for="loginPhoneNumber"><%= __('main-page.phone_number') %></label>
+                    <input type="text" id="loginPhoneNumber" name="phone_number">
+
+                    <label for="loginPassword"><%= __('main-page.password') %></label>
+                    <input type="password" id="loginPassword" name="password">
+
+                    <input type="submit" value="<%= __('main-page.loginBtn') %>">
+                    <span id="loginErrors"><%= loginError ? loginError : ''%></span>
+                </form>
+            </div>
+        <% } else { %>
+        <span><%= __('main-page.loginInfo') %> <%=loggedUser.name + " " + loggedUser.surname%></span>
+        <a href="/logout"><%= __('main-page.logoutBtn') %></a>
+        <% } %>
+    </main>
+
+<%- include('./fragments/footer.ejs') %>

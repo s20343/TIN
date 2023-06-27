@@ -1,0 +1,154 @@
+{
+	"main-page": {
+		"content": "Strona główna",
+		"loginh5": "Zaloguj się",
+		"password": "Hasło:",
+		"loginBtn": "Zaloguj się",
+		"loginInfo": "Jesteś zalogowany jako:",
+		"logoutBtn": "Wyloguj się",
+		"phone_number": "Numer telefonu"
+	},
+	"nav": {
+		"main-page": "Strona główna",
+		"customers": "Klienci",
+		"cars": "Samochody",
+		"rent": "wynajem"
+	},
+	"list": {
+		"actions": {
+			"title": "Działania",
+			"details": "Szczegóły",
+			"edit": "Edytuj",
+			"delete": "Usuń"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Powrót",
+			"edit": "Edytuj",
+			"cancel": "Anuluj",
+			"details": "form.actions.details",
+			"delete": "form.actions.delete"
+		}
+	},
+	"customers": {
+		"fields": {
+			"name": "imię pierwsze imię",
+			"surname": "nazwisko",
+			"address": "Address",
+			"phone_number": "Numer telefonu",
+			"email": "E-mail",
+			"password": "Hasło"
+		},
+		"list": {
+			"title": "Klienci",
+			"addNew": "Dodaj nowego klienta",
+			"noData": "Brak klientów w bazie danych",
+			"pageTitle": "Lista klientów"
+		},
+		"form": {
+			"rent": "Historia czynszów",
+			"add": {
+				"pageTitle": "Dodawanie klientów",
+				"btnLabel": "Dodaj klienta",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Klient został pomyślnie dodany"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edytuj klienta",
+				"btnLabel": "Zapisz zmiany",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Klient został pomyślnie zaktualizowany"
+				}
+			}
+		}
+	},
+	"cars": {
+		"fields": {
+			"make": "zrobić",
+			"model": "Model",
+			"year": "Rok",
+			"color": "kolor"
+		},
+		"list": {
+			"title": "Samochody",
+			"addNew": "Dodaj nowe samochody",
+			"noData": "Brak samochodów w bazie danych",
+			"pageTitle": "Lista samochodów"
+		},
+		"form": {
+			"rent": "Historia czynszów",
+			"add": {
+				"pageTitle": "Dodawanie samochodów",
+				"btnLabel": "Dodaj samochód",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Samochody dodane pomyślnie"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edytuj samochód",
+				"btnLabel": "Zapisz zmiany",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Samochód został pomyślnie zaktualizowany"
+				}
+			}
+		}
+	},
+	"rent": {
+		"fields": {
+			"customer_id": "Klient",
+			"car_id": "Samochód",
+			"rent_date": "Data wynajmu",
+			"return_date": "Data powrotu",
+			"chooseCustomer": "---Wybierz klienta---",
+			"chooseCar": "---Wybierz samochód---"
+		},
+		"list": {
+			"title": "Czynsze",
+			"addNew": "Dodaj nowy czynsz",
+			"noData": "Brak czynszów w bazie danych",
+			"pageTitle": "Lista czynszów"
+		},
+		"form": {
+			"add": {
+				"pageTitle": "Dodawanie czynszów",
+				"btnLabel": "Dodaj czynsz",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Czynsz dodany pomyślnie"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edytuj czynsz",
+				"btnLabel": "Zapisz zmiany",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Wynajem zaktualizowany pomyślnie"
+				}
+			}
+		}
+	},
+	"auth": {
+		"loginError": "Zły numer telefonu lub hasło",
+		"fieldRequired": "To pole jest wymagane",
+		"dateError": "Pole powinno zawierać datę w formacie RRRR-MM-DD",
+		"dateFutureError": "Data nie może pochodzić z przyszłości",
+		"formError": "Formularz zawiera błędy",
+		"lengthError": "Pole powinno zawierać od 3 do 60 znaków",
+		"length2Error": "Pole powinno zawierać od 2 do 120 znaków",
+		"yearError": "Liczba powinna zawierać się w przedziale od 2000 do 2020",
+		"PhonePatternError": "Pole powinno zawierać prawidłowy numer telefonu zgodnie ze wzorcem",
+		"CompareDate": "Data zwrotu powinna być późniejsza niż data wypożyczenia"
+	},
+	"customer": {
+		"list": {
+			"addNew": "customer.list.addNew"
+		}
+	},
+	"The field is required": "The field is required"
+}

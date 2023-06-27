@@ -1,0 +1,48 @@
+<%- include('../../fragments/header.ejs') %>
+
+    <main>
+        <h2><%= __('cars.list.pageTitle') %></h2>
+        
+        <table class="table-list">
+            
+            <thead>
+                <tr>
+                    <th><%= __('cars.fields.make') %></th>
+                    <th><%= __('cars.fields.model') %></th>
+                    <th><%= __('cars.fields.year') %></th>
+                    <th><%= __('cars.fields.color') %></th>
+                    <th><%= __('list.actions.title') %></th>
+                </tr>
+            </thead>
+    
+            <tbody> 
+            <% for (let car of cars) { %>
+                <tr>
+                    <td><%= car.make %></td>
+                    <td><%= car.model %></td>
+                    <td><%= car.year %></td>
+                    <td><%= car.color %></td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a href="/cars/details/<%=car._id%>" class="list-actions-button-details"><%= __('list.actions.details') %> </a>
+                            </li>
+                            <li>
+                                <a href="/cars/edit/<%=car._id%>" class="list-actions-button-edit"><%= __('list.actions.edit') %> </a>
+                            </li>
+                            <li>
+                                <a href="/cars/delete/<%=car._id%>" class="list-actions-button-delete"><%= __('list.actions.delete') %> </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            <% } %>
+            </tbody>
+            
+        </table>
+        
+        <p><a href="/cars/add" class="button-add"><%= __('cars.list.addNew') %></a></p>
+        
+    </main>
+    
+<%- include('../../fragments/footer.ejs') %>

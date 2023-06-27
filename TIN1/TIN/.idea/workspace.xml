@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a64f744b-e313-4c7c-9448-06aabae818c5" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2IMQnLHUa54JtOVkQPZbIoZYcgh" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Docker.docker.mysql: Compose Deployment">
+    <configuration name="docker: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker.mysql: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="mysql" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker.mysql: Compose Deployment" />
+        <item itemvalue="Docker.docker: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a64f744b-e313-4c7c-9448-06aabae818c5" name="Default Changelist" comment="" />
+      <created>1669989137609</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669989137609</updated>
+      <workItem from="1669989140117" duration="782000" />
+      <workItem from="1670076986268" duration="1628000" />
+      <workItem from="1670081576690" duration="580000" />
+      <workItem from="1670082177894" duration="233000" />
+      <workItem from="1670100419064" duration="906000" />
+      <workItem from="1670107414056" duration="3797000" />
+      <workItem from="1670125599625" duration="1246000" />
+      <workItem from="1670168521866" duration="4316000" />
+      <workItem from="1670180349957" duration="136000" />
+      <workItem from="1670208025115" duration="1383000" />
+      <workItem from="1670277737969" duration="70000" />
+      <workItem from="1670614301963" duration="2012000" />
+      <workItem from="1670617517653" duration="496000" />
+      <workItem from="1670624827513" duration="493000" />
+      <workItem from="1670628142851" duration="609000" />
+      <workItem from="1670629357764" duration="8955000" />
+      <workItem from="1670788680019" duration="74000" />
+      <workItem from="1670799197002" duration="648000" />
+      <workItem from="1670800129105" duration="19000" />
+      <workItem from="1671014578383" duration="2365000" />
+      <workItem from="1671070574411" duration="1084000" />
+      <workItem from="1671073494521" duration="5525000" />
+      <workItem from="1671079970898" duration="3274000" />
+      <workItem from="1671085593115" duration="466000" />
+      <workItem from="1671086252320" duration="4821000" />
+      <workItem from="1671152266875" duration="2852000" />
+      <workItem from="1671161474585" duration="388000" />
+      <workItem from="1671167990075" duration="1548000" />
+      <workItem from="1671176148601" duration="187000" />
+      <workItem from="1671233077045" duration="3170000" />
+      <workItem from="1671245722699" duration="9525000" />
+      <workItem from="1671266764036" duration="1799000" />
+      <workItem from="1671268718804" duration="767000" />
+      <workItem from="1671270289902" duration="148000" />
+      <workItem from="1671270779515" duration="1181000" />
+      <workItem from="1671277443228" duration="10451000" />
+      <workItem from="1671293334888" duration="5681000" />
+      <workItem from="1671335292442" duration="10315000" />
+      <workItem from="1671352628692" duration="75000" />
+      <workItem from="1671353237489" duration="2301000" />
+      <workItem from="1671356724492" duration="1106000" />
+      <workItem from="1671362067704" duration="13723000" />
+      <workItem from="1671419561953" duration="21596000" />
+      <workItem from="1671459385941" duration="52000" />
+      <workItem from="1671880991089" duration="773000" />
+      <workItem from="1672616237153" duration="2984000" />
+      <workItem from="1672630783664" duration="3264000" />
+      <workItem from="1672716027389" duration="551000" />
+      <workItem from="1672719395890" duration="9421000" />
+      <workItem from="1672786111417" duration="1721000" />
+      <workItem from="1672790775118" duration="2014000" />
+      <workItem from="1672813709809" duration="1734000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <script type="application/javascript" src="/js/validationCustomerForm.js"></script>
+
+    <title>Car rental: new customer</title>
+</head>
+<body>
+<header>
+    <h1>Car rental</h1>
+    <img src="/images/as.webp" alt="car rental logo">
+</header>
+<nav>
+    <ul>
+        <li><a href="/" class="<%= navLocation == 'main' ? 'active' : ''%>"><%=__('nav.main-page')%></a></li>
+        <% if(loggedUser) { %>
+            <li><a href="/customers" class="<%= navLocation == 'customers' ? 'active' : ''%>"><%=__('nav.customers')%></a></li>
+            <li><a href="/cars" class="<%= navLocation == 'cars' ? 'active' : ''%>"><%=__('nav.cars')%></a></li>
+            <li><a href="/rent" class="<%= navLocation == 'rent' ? 'active' : ''%>"><%=__('nav.rent')%></a></li>
+            <li><a href="/changeLang/pl" class="<%= lang == 'pl' ? 'active' : ''%>">PL</a></li>
+            <li><a href="/changeLang/en" class="<%= lang == 'en' ? 'active' : ''%>">EN</a></li>
+        <% } %>
+
+    </ul>
+</nav>
+
+    

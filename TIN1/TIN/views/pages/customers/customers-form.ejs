@@ -1,0 +1,144 @@
+<%- include('../../fragments/header.ejs') %>
+    
+    <main>
+        <script type="application/javascript" src="/js/validationCustomerForm.js"></script>
+        <h2><%= pageTitle%></h2>
+        
+        <form class="form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();" ><!--onsubmit="return validateForm();"-->
+            <input type="hidden" name="_id" value="<%= customer._id %>">
+
+
+            <div style="display: none">
+                <span id="errorMessage-required"><%= __('auth.fieldRequired') %></span>
+            </div>
+            <div style="display: none">
+                <span id="errorMessage-lengthError"><%= __('auth.lengthError') %></span>
+            </div>
+            <div style="display: none">
+                <span id="errorMessage-PhonePatternError"><%= __('auth.PhonePatternError') %></span>
+            </div>
+            <div style="display: none">
+                <span id="errorMessage-formError"><%= __('auth.formError') %></span>
+            </div>
+            <div style="display: none">
+                <span id="errorMessage-length2Error"><%= __('auth.length2Error') %></span>
+            </div>
+            
+            <label for="name"><%= __('customers.fields.name') %>:</label>
+            <input type="text" name="name" id="name" placeholder="np: Batuhan" value="<%= customer.name %>" class="<%= validationErrors.find(e => e.path===('name')) ? 'error-input' : '' %>"
+                <%=(formMode=='showDetails' ) ? 'disabled' : '' %>/>
+            <span id="errorName" class="errors-text">
+                 <% if (validationErrors.find(e=> e.path===('name'))) { %>
+                    <% if(validationErrors.find(e => e.path===('name')).message.toString() === "The field is required") { %>
+                        <%= __('auth.fieldRequired')%>
+                    <%}else{%>
+                        <%= __('auth.lengthError')%>
+                    <%}%>
+                 <% } %>
+            </span>
+
+
+            
+            <label for="surname"><%= __('customers.fields.surname') %>:<abbr title="required" aria-label="required">*</abbr></label>
+            <input type="text" name="surname" id="surname" placeholder="np: Seyhan" value="<%= customer.surname %>"
+                   class="<%= validationErrors.find(e=> e.path.includes('surname')) ? 'error-input' : '' %>"
+                <%=(formMode=='showDetails' ) ? 'disabled' : '' %> />
+            <span id="errorSurname" class="errors-text">
+                <% if (validationErrors.find(e=> e.path.includes('surname'))) { %>
+                    <% if(validationErrors.find(e => e.path===('surname')).message.toString() === "The field is required") { %>
+                        <%= __('auth.fieldRequired')%>
+                    <%}else{%>
+                        <%= __('auth.lengthError')%>
+                    <%}%>
+                 <% } %>
+            </span>
+            
+            <label for="address"><%= __('customers.fields.address') %>:<abbr title="required" aria-label="required">*</abbr></label>
+            <input type="text" name="address" id="address" placeholder="np: Sienna 93" value="<%= customer.address %>" class="<%= validationErrors.find(e=>
+            e.path.includes('address')) ? 'error-input' : '' %>"
+                <%=(formMode=='showDetails' ) ? 'disabled' : '' %> />
+            <span id="errorAddress" class="errors-text">
+                <% if (validationErrors.find(e=> e.path.includes('address'))) { %>
+                    <% if(validationErrors.find(e => e.path.includes('address')).message.toString() === "The field is required") { %>
+                        <%= __('auth.fieldRequired')%>
+                    <%}else{%>
+                        <%= __('auth.lengthError')%>
+                    <%}%>
+                <% } %>
+            </span>
+
+            <label for="phone_number"><%= __('customers.fields.phone_number') %>:<abbr title="required" aria-label="required">*</abbr></label>
+            <input type="text" name="phone_number" id="phone_number" placeholder="np: 123-456-789" value="<%= customer.phone_number %>" class="<%= validationErrors.find(e=>e.path.includes('phone_number')) ? 'error-input' : '' %>"
+                <%=(formMode=='showDetails' ) ? 'disabled' : '' %> />
+            <span id="errorPhoneNumber" class="errors-text">
+                <% if (validationErrors.find(e=> e.path.includes('phone_number'))) { %>
+                    <% if(validationErrors.find(e => e.path.includes('phone_number')).message.toString() === "The field is required") { %>
+                        <%= __('auth.fieldRequired')%>
+                    <%}else{%>
+                        <%= __('auth.PhonePatternError')%>
+                    <%}%>
+                <% } %>
+            </span>
+
+                <label for="password"><%= __('customers.fields.password') %>:</label>
+                <input type="password" name="password" id="password" placeholder="******" value="<%= customer.password %>"
+                        <%= (formMode == 'showDetails' ) ? 'disabled' : ''%> class="<%= validationErrors.find(e => e.path.includes('password')) ? 'error-input' : ''%>">
+                <span id="errorPassword" class="errors-text">
+                    <% if (validationErrors.find(e => e.path.includes('password'))) { %>
+                        <%= (validationErrors.find(e => e.path.includes('password')).message) %>
+                        <% } %>
+                </span>
+
+
+
+            
+            <% if (formMode == 'showDetails') { %>
+                <div>
+                    <a class="list-actions-button-edit" href="/customers/edit/<%= customerBefore._id %>"><%= __('form.actions.edit') %></a>
+                </div>
+            <% } %>
+            
+            <div>
+        <span id="errorsSummary" class="errors-text">
+            <% if(validationErrors.length !== 0) {%>
+                <%= __('auth.formError')%>
+            <%}%>
+        </span>
+
+                <% if (formMode != 'showDetails') { %>
+                    <input class="form-button-submit" type="submit" value="<%= __('cars.form.edit.btnLabel') %>" />
+                    <a class="form-button-cancel" href="/customers"><%= __('form.actions.cancel') %></a>
+                <% } else { %>
+                    <a class="form-button-cancel" href="/customers"><%= __('form.actions.return') %></a>
+                <% } %>
+            </div>
+            
+        </form>
+        
+        <% if (formMode == 'showDetails' || formMode == 'edit') { %>
+        <h2>Rental details</h2>
+        
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th><%=__('rent.fields.car_id')%></th>
+                    <th><%=__('rent.fields.rent_date')%></th>
+                    <th><%=__('rent.fields.return_date')%></th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <% for (let c of customerBefore.rents) { %>
+                    <tr>
+                        <td><a href="/cars/cars-details/<%= c.car._id %>"><%= c.car.make %></a></td>
+                        <td><%= c.rent_date.toISOString().split('T')[0] %></td>
+                        <td><%= c.return_date ? c.return_date.toISOString().split('T')[0] : '' %></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <% } %>
+        
+    </main>
+    
+<%- include('../../fragments/footer.ejs') %>
